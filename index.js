@@ -15,7 +15,7 @@ Every.prototype.start = function(amount, type, callback) {
             this.callback = amount;
         } else {
             this.callback = callback;
-            this.setDelay(amount, type);
+            this.set(amount, type);
         }
     } else if(!this.delay) {
         this.setDelay(1, 'second');
@@ -24,7 +24,7 @@ Every.prototype.start = function(amount, type, callback) {
     return this;
 };
 
-Every.prototype.setDelay = function(amount, type) {
+Every.prototype.set = function(amount, type) {
     this.delay = moment.duration(amount, type).asMilliseconds();
     return this;
 };

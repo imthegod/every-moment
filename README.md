@@ -1,7 +1,9 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
 
-> Declarative setinterval using moment durations
+> Declarative setInterval using moment durations
 
+## Getting Started
+See usage for example of combining the ['in-one-moment'](https://github.com/raygerrard/in-one-moment) module for declarative setTimeout and setInterval.
 
 ## Install
 
@@ -14,9 +16,24 @@ $ npm install --save every-moment
 
 ```js
 var every = require('every-moment');
+var in = require('in-one-moment');
 
-every(5, 'seconds', function() {
-    console.log('got called');
+var timer = every(1, 'second', function() {
+    console.log(this.delay);
+});
+
+in(6, 'seconds', function() {
+    timer.set(2, 'seconds').start();
+});
+
+in(15, 'seconds', function() {
+    console.log('Stop the clock!');
+    timer.stop();
+});
+
+in(25, 'seconds', function() {
+    console.log('GO!');
+    timer.start();
 });
 ```
 
