@@ -1,0 +1,37 @@
+{
+  "name": "every-moment",
+  "version": "0.0.0",
+  "description": "Declarative setinterval using moment durations",
+  "author": {
+    "name": "Ray Gerrard",
+    "email": "raygerrard@gmail.com"
+  },
+  "repository": "raygerrard/every-moment",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "every-moment",
+    "setinterval",
+    "moment",
+    "time",
+    "every"
+  ],
+  "dependencies": {
+    "moment": "^2.9.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0",
+    "grunt-mocha-cli": "^1.11.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
