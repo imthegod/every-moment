@@ -17,15 +17,15 @@ Every.prototype.start = function(amount, type, callback) {
             this.callback = callback;
             this.set(amount, type);
         }
-    } else if(!this.delay) {
-        this.setDelay(1, 'second');
+    } else if(!this.duration) {
+        this.set(1, 'second');
     }
-    this.timer = setInterval(this.callback.bind(this), this.delay);
+    this.timer = setInterval(this.callback.bind(this), this.duration);
     return this;
 };
 
 Every.prototype.set = function(amount, type) {
-    this.delay = moment.duration(amount, type).asMilliseconds();
+    this.duration = moment.duration(amount, type).asMilliseconds();
     return this;
 };
 

@@ -19,7 +19,7 @@ var every = require('every-moment');
 var wait = require('wait-one-moment');
 
 var timer = every(1, 'second', function() {
-    console.log(this.delay);
+    console.log(this.duration);
 });
 
 wait(6, 'seconds', function() {
