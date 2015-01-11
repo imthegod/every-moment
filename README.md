@@ -17,23 +17,29 @@ $ npm install --save every-moment
 ```js
 var every = require('every-moment');
 var wait = require('wait-one-moment');
+var potatoes;
 
 var timer = every(1, 'second', function() {
     console.log(this.duration);
 });
 
-wait(6, 'seconds', function() {
+wait(5, 'seconds', function() {
     timer.set(2, 'seconds').start();
 });
 
-wait(15, 'seconds', function() {
+wait(10, 'seconds', function() {
     console.log('Stop the clock!');
     timer.stop();
 });
 
-wait(25, 'seconds', function() {
-    console.log('GO!');
-    timer.start();
+wait(15, 'seconds', function() {
+    if(!potatoes) {
+        console.log('No potatoes :(');
+        potatoes = true;
+        this.start();
+    } else {
+        console.log('YUM :)');
+    }
 });
 ```
 
